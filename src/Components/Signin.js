@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 
 
+
 const Signin = () => {
   const [formData, setFormData] = useState({
     username:'',
@@ -12,6 +13,7 @@ const Signin = () => {
 
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
+  
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -25,6 +27,7 @@ const Signin = () => {
     });
   }
 
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,11 +54,13 @@ const Signin = () => {
         username:'',
         password:'',
       });
+      window.location.href = '/home';
     }else {
       setSuccessMessage('');
     }
-
   }
+
+  
 
   return (
     <div className="form-container">
@@ -87,9 +92,9 @@ const Signin = () => {
         />
         {errors.password && <div className='error'>{errors.password}</div>}
       </div>
-      <NavLink to="home">
+      {/* <NavLink to="home"> */}
           <button className='button'>Log in</button>
-      </NavLink>     
+      {/* </NavLink> */}     
       <hr />
       <p className='hint'>
         Don't have an account?

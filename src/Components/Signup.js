@@ -65,6 +65,7 @@ const Signup = () => {
         password:'',
         confirmPassword:'',
       });
+      window.location.href = '/';
     }else {
       setSuccessMessage('');
     }
@@ -125,9 +126,9 @@ const Signup = () => {
         />
         {errors.confirmPassword && <div className='error'>{errors.confirmPassword}</div>}
       </div>
-      <NavLink to="/">
+      {/* <NavLink to="/"> */}
           <button className='button' type='submit'>Sign up</button>
-      </NavLink>
+      {/* </NavLink> */}
       <hr />
       <p className='hint'>
         Already have an account?  
